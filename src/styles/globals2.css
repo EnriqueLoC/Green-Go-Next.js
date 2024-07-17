@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Title';
-  src: url('../../public/fonts/Neglige.otf');
+  src: url('../../public/font/Neglige.otf');
 }
 @font-face {
   font-family: 'Body';
-  src: url('../../public/fonts/NeueMontreal_Medium.otf');
+  src: url('../../public/font/NeueMontreal_Medium.otf');
 }
 
-body{
+.bodyCoupons{
   margin: 0px;
   font-family: 'Body';
 
 }
 
-h2{
+.h2Coupons{
   font-family: 'Title';
 }

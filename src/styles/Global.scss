@@ -16,10 +16,10 @@
     font-weight: 400;
 }
 
-:root {
+/* :root {
     color-scheme: dark;
     scrollbar-width: none;
-}
+} */
 
 html,
 body {
@@ -48,3 +48,5 @@ button {
 @import './Home.scss';
 @import './Navbar.scss';
 @import './Menu.scss';
+@import './globals.css';
+@import './globals2.css';

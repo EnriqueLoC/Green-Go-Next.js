@@ -14,7 +14,7 @@ const Home = () => {
         <div className='styled-home'>
             <section className='parallax-container'>
                 <div className='parallax' style={{ transform: `translateY(${offsetY * 0.125}px)` }}>
-                    <h1 style={{ transform: `translateY(${offsetY * 0.175}px)` }}>Green Go</h1>
+                    <h1 className='mainTitle' style={{ transform: `translateY(${offsetY * 0.175}px)` }}>Green Go</h1>
                     <div className='footer-hero'>
                         {/* Aquí va tu contenido */}
                     </div>

@@ -1,17 +1,15 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: 'Regular';
   src: url('../../public/font/PPAcma-Book.ttf');
 }
-
-body {
+.bodyMap {
   
   background-color: rgb(0, 0, 0);
 }
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,7 +23,6 @@ body {
     --background-end-rgb: 0, 0, 0;
   }
 }
-
 .GG {
   backdrop-filter: blur(1px);
   color: rgba(255, 255, 255, 0.71);

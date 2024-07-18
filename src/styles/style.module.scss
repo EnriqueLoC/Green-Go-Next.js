@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.cardContainerCoupons {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  
+}
+
+.cardCoupons {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 500px;
+  width: 960px;
+  border-radius: 55px;
+  padding: 40px;
+  transform-origin: top;
+  outline: 5px solid #000;
+  h2 {
+    text-align: center;
+    margin: 0px;
+    font-size: 28px;
+  }
+
+  .bodyCoupons {
+    display: flex;
+    height: 100%;
+    margin-top: 50px;
+    gap: 40px;
+   
+
+    .buttonsContainerCoupons {
+      display: flex;
+      flex-direction: column;
+      gap: 45px;
+      align-items: center;
+      justify-content: center; /* Center the buttons */
+      flex: 1; /* Make this container take up equal space */
+      margin-left: 65px; /* Add margin-left to move the buttons to the right */
+
+      .buttonCoupons {
+        padding: 10px 35px;
+        font-size: 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        background-color: transparent;
+        color: #ffffff;
+        transition: background-color 0.5s;
+        width: 200px;
+        font-family: 'Poppins', sans-serif; /* Apply the Poppins font */
+
+        &:hover {
+          
+          color:black; 
+          background-color: #ffffff;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .descriptionCoupons {
+      width: 40%;
+      position: relative;
+      top: 10%;
+
+      p {
+        font-size: 16px;
+
+        &::first-letter {
+          font-size: 28px;
+          font-family: 'Title';
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        a {
+          font-size: 12px;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .imageContainerCoupons {
+      position: relative;
+      width: 150%;
+      height: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+
+      .inner {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        object-fit: fill;
+      }
+    }
+  }
+}

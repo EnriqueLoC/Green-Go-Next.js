@@ -45,7 +45,7 @@ const Home = () => {
 
             <section className='contact'>
                 <p>
-                    <span>Green Go ©</span>
+                    <span className='footer-text'>Green Go ©</span>
                 </p>
             </section>
         </div>

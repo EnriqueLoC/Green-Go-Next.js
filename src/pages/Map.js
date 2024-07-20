@@ -52,7 +52,7 @@ const Map = () => {
   }, []);
 
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBTyq_04RYLMVR1tmilmddDqeSset7tbTY", // Reemplaza con tu clave de API
+    googleMapsApiKey: process.env.GOOGLE_MAPS_APIKEY, // Reemplaza con tu clave de API
   });
 
   if (loadError) {

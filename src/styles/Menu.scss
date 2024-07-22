@@ -14,7 +14,7 @@
     opacity: 0;
     transition: .25s ease-in;
 
-    .links {
+    .links-menu {
         display: flex;
         gap: 75px;
         color: #fff;
@@ -25,15 +25,15 @@
             font-weight: 500;
             letter-spacing: 1px;
             opacity: .5;
-            transition: .25s;
+            transition: opacity .25s, transform .25s; /* Añadir transición para el transform */
 
             &:first-child {
                 opacity: 1;
             }
 
             &:hover {
-                opacity: 1;
-                transition: .25s;
+                opacity: 1 !important;
+                transform: scale(1.1) !important; /* Agrega esto para aumentar el tamaño */
             }
         }
     }
@@ -49,11 +49,11 @@
         p {
             cursor: pointer;
             opacity: .25;
-            transition: .25s;
+            transition: opacity .25s, transform .25s; /* Añadir transición para el transform */
 
             &:hover {
-                opacity: .5;
-                transition: .25s;
+                opacity: .5 !important;
+                transform: scale(1.1) !important; /* Agrega esto para aumentar el tamaño */
             }
         }
     }
@@ -64,4 +64,18 @@
     opacity: 1;
     transition: .25s ease-in;
     z-index: 888;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .styled-menu {
+        .links {
+            flex-direction: column;
+            gap: 20px;
+
+            span {
+                font-size: 30px;
+            }
+        }
+    }
 }

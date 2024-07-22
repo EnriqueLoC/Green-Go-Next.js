@@ -368,3 +368,26 @@ settings {
 .back-button:hover {
   background-color: var(--Very-dark-desaturated-blue);
 }
+
+.back-home-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back-home-button i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.back-home-button:hover {
+  color: #ccc; /* Optional: change text color on hover */
+}

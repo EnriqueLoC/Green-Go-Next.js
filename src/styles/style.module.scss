@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+/* Ajustes generales */
 .cardContainerCoupons {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: 0px;
-  
+  top: 50px;
 }
 
 .cardCoupons {
@@ -20,92 +18,146 @@
   padding: 40px;
   transform-origin: top;
   outline: 5px solid #000;
-  h2 {
-    text-align: center;
-    margin: 0px;
-    font-size: 28px;
+}
+
+.cardCoupons h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+}
+
+.bodyCoupons {
+  display: flex;
+  height: 100%;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+/* Estilos por defecto para los botones */
+.buttonsContainerCoupons {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-left: 65px;
+}
+
+.buttonCoupons {
+  padding: 10px 35px;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: transparent;
+  color: #ffffff;
+  transition: background-color 0.5s;
+  width: 200px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.buttonCoupons:hover {
+  color: black;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Estilo de la descripción */
+.descriptionCoupons {
+  width: 40%;
+  position: relative;
+  top: 10%;
+}
+
+.descriptionCoupons p {
+  font-size: 16px;
+}
+
+.descriptionCoupons p::first-letter {
+  font-size: 28px;
+  font-family: 'Title';
+}
+
+.descriptionCoupons span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.descriptionCoupons span a {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Estilos para la imagen */
+.imageContainerCoupons {
+  position: relative;
+  width: 150%;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.imageContainerCoupons .inner {
+  width: 100%;
+  height: 100%;
+}
+
+.imageContainerCoupons img {
+  object-fit: fill;
+}
+
+.titleCoupon {
+  
+  size: 0px;
+  font-size: 0%;
+  opacity: 0,
+   
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+
+  .cardContainerCoupons {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 80px;
+  }
+
+  .cardCoupons {
+    width: 95%;
+    height: auto;
+    padding: 20px;
   }
 
   .bodyCoupons {
-    display: flex;
-    height: 100%;
-    margin-top: 50px;
-    gap: 40px;
-   
+    flex-direction: column;
+    gap: 45px;
+  }
 
-    .buttonsContainerCoupons {
-      display: flex;
-      flex-direction: column;
-      gap: 45px;
-      align-items: center;
-      justify-content: center; /* Center the buttons */
-      flex: 1; /* Make this container take up equal space */
-      margin-left: 65px; /* Add margin-left to move the buttons to the right */
+  .buttonsContainerCoupons {
+    margin-left: 0;
+    margin-top: 45px;
+    vertical-align: bottom;
+  }
 
-      .buttonCoupons {
-        padding: 10px 35px;
-        font-size: 25px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        background-color: transparent;
-        color: #ffffff;
-        transition: background-color 0.5s;
-        width: 200px;
-        font-family: 'Poppins', sans-serif; /* Apply the Poppins font */
+  .descriptionCoupons {
+    width: 100%;
+    position: static;
+    top: auto;
+  }
 
-        &:hover {
-          
-          color:black; 
-          background-color: #ffffff;
-          border-radius: 10px;
-        }
-      }
-    }
-
-    .descriptionCoupons {
-      width: 40%;
-      position: relative;
-      top: 10%;
-
-      p {
-        font-size: 16px;
-
-        &::first-letter {
-          font-size: 28px;
-          font-family: 'Title';
-        }
-      }
-
-      span {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
-        a {
-          font-size: 12px;
-          text-decoration: underline;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .imageContainerCoupons {
-      position: relative;
-      width: 150%;
-      height: 100%;
-      border-radius: 25px;
-      overflow: hidden;
-
-      .inner {
-        width: 100%;
-        height: 100%;
-      }
-
-      img {
-        object-fit: fill;
-      }
-    }
+  .titleCoupon {
+    font-size: 26px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    opacity: 1;
+    text-align: center;
+    color: #ffffff;
   }
 }

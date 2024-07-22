@@ -18,9 +18,8 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
         style={{ backgroundColor: color, scale, top: `calc(-5vh + ${i * 25}px)` }}
         className="cardCoupons"
       >
-        <h2>{title}</h2>
+        <h2 className='titleCoupon'>{title}</h2>
         <div className="bodyCoupons">
-          {/* Buttons section */}
           <div className="buttonsContainerCoupons">
             <motion.button
               className="buttonCoupons"

@@ -17,7 +17,7 @@ const Menu = ({ isOpen }) => {
 
       return (
         <div className={isOpen ? 'styled-menu menu-open' : 'styled-menu'}>
-          <ul className='links'>
+          <ul className='links-menu'>
             {links.map((link) => (
               <li key={link.id}>
                 <span onClick={() => handleMenuClick(link.path)}>

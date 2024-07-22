@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { Equals, X } from 'phosphor-react';
 import Menu from './Menu';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react'; // Importa el hook useSession
 
-export default function Navbar({ session }) {
+export default function Navbar() {
+  const { data: session, status } = useSession(); // Usa useSession para obtener la sesión
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const buttonText = status === 'loading' ? 'Loading...' : session ? 'Profile' : 'Login';
 
   return (
     <>
@@ -18,7 +22,7 @@ export default function Navbar({ session }) {
         </span>
         <Link href={!session ? "/Login" : "/profile"}>
           <button>
-            {!session ? 'Login' : 'Profile'}
+            {buttonText}
           </button>
         </Link>
       </nav>

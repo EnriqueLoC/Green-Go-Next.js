@@ -8,6 +8,7 @@
         import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
         import loginImg from '../../public/assets/trees.jpg';
         import Image from 'next/image';
+        import { useRouter } from 'next/router';
 
         export default function Login() {
           const [email, setUsername] = useState('');
@@ -16,29 +17,40 @@
           const [error, setError] = useState('');
           const [isLoading, setIsLoading] = useState(false);
           const [showPassword, setShowPassword] = useState(false);
-          
 
-          const handleSubmit = (event) => {
+          const router = useRouter();       
 
+          const handleSubmit = async (event) => {
             event.preventDefault();
             if (!email || !password) {
               setError('Both email and password are required');
               return;
             }
-
             setIsLoading(true);
-
-            console.log({
-              email,
-              password,
-              rememberMe,
-            });
-
-            setTimeout(() => {
+        
+            try {
+              const result = await signIn('credentials', {
+                email,
+                password,
+                redirect: false,  // Use redirect: false to handle redirection manually
+              });
+        
+              if (result.error) {
+                setError('Check your credentials');
+              } else {
+                // Handle successful login if needed
+                router.push('/');  // Redirect to homepage or dashboard
+              }
+            } catch (error) {
+              setError('An unexpected error occurred');
+            } finally {
               setIsLoading(false);
-              setError('');
-            }, 2000);
+            }
           };
+
+          const goHome = () => {
+            router.push('/');
+          }
 
           return (
             
@@ -48,7 +60,7 @@
 
               <div className='flex justify-center items-center h-full relative z-10'>
                 <form className='max-w-[400px] w-full mx-auto bg-white p-8' onSubmit={handleSubmit} aria-labelledby="loginForm">
-                  <h2 id="loginForm" className='text-4xl font-bold text-center py-4'>Green Go</h2>
+                  <h2 id="loginForm" className='text-4xl font-bold text-center py-4 cursor-pointer' onClick={goHome}>Green Go</h2>
                   <div className='flex justify-between py-8'>
                     <button 
                       type="button" 
@@ -100,7 +112,10 @@
                     </div>
                   </div>
                   {error && <p className='text-red-600'>{error}</p>}
-                  <button type="submit" className='w-full py-3 mt-8 bg-emerald-500 hover:bg-emerald-800 shadow-lg shadow-green-500/50 transition-colors text-white' disabled={isLoading}>
+                  <button
+                    type="submit" 
+                    className='w-full py-3 mt-8 bg-emerald-500 hover:bg-emerald-800 shadow-lg shadow-green-500/50 transition-colors text-white' 
+                    disabled={isLoading}>
                     {isLoading ? 'Signing In...' : 'Sign In'}
                   </button>
                   <label className='flex items-center mt-2'>

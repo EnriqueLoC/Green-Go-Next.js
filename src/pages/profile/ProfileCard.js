@@ -6,6 +6,7 @@ import favicon from '../../../public/assets/favicon-32x32.png';
 import avatar from '../../../public/assets/avatar.png';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const ProfileCard = ({ onChangeView }) => {
   const session = useSession();
@@ -20,6 +21,11 @@ const ProfileCard = ({ onChangeView }) => {
     <div>
       {/* <div className="blur-overlay"></div> */}
       <main className='bodyProfile'>
+        <button className='back-home-button'>
+          <Link href="/">
+            {"< Go Back"}
+          </Link>          
+        </button>
         <div className="containerProfile">
           <div className="cardProfile">
             <section className="imgProfile">

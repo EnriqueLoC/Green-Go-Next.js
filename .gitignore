@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # service-account
-.service-account.json
+service-account.json
